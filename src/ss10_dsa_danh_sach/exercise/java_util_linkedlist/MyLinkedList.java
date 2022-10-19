@@ -9,13 +9,13 @@ public class MyLinkedList<E> {
 
     public class Node {
         private Node next;
-        private Object data;
+        private E data;
 
-        public Node(Object data) {
+        public Node(E data) {
             this.data = data;
         }
 
-        public Object getData() {
+        public E getData() {
             return this.data;
         }
     }
@@ -51,7 +51,7 @@ public class MyLinkedList<E> {
         numNodes++;
     }
 
-    public Object get(int index) {
+    public E get(int index) {
         Node temp = head;
         for (int i = 0; i < index; i++) {
             temp = temp.next;
@@ -68,7 +68,7 @@ public class MyLinkedList<E> {
             throw new IllegalArgumentException("Error index: " + index);
         }
         Node temp = head;
-        Object data;
+        E data;
         if (index == 0) {
             data = temp.data;
             head = head.next;
@@ -81,7 +81,7 @@ public class MyLinkedList<E> {
             temp.next = temp.next.next;
             numNodes--;
         }
-        return (E) data;
+        return data;
     }
 
     public boolean remove(E element) {
@@ -141,7 +141,7 @@ public class MyLinkedList<E> {
     }
 
     public E getFirst() {
-        return (E) head.data;
+        return  head.data;
     }
 
     public E getLast() {
@@ -153,7 +153,7 @@ public class MyLinkedList<E> {
             }
             temp = temp.next;
         }
-        return (E) temp2.data;
+        return temp2.data;
     }
 
     public void clear() {

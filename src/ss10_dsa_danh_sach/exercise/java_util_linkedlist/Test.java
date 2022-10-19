@@ -30,7 +30,7 @@ public class Test {
                 this.name = name;
             }
         }
-        MyLinkedList<Student> myLinkedList = new MyLinkedList<>();
+        MyLinkedList<Student> myLinkedList = new MyLinkedList<Student>();
         Student student1 = new Student(1, "Tung1");
         Student student2 = new Student(2, "Tung2");
         Student student3 = new Student(3, "Tung3");
@@ -47,7 +47,7 @@ public class Test {
         myLinkedList.addLast(myLinkedList.getLast());
 
         for (int i = 0; i < myLinkedList.size(); i++) {
-            Student student = (Student) myLinkedList.get(i);
+            Student student =  myLinkedList.get(i);
             System.out.println(student.getName());
         }
 
@@ -57,10 +57,12 @@ public class Test {
         MyLinkedList<Student> myLinkedList1 = myLinkedList.clone();
 
         for (int i = 0; i < myLinkedList1.size(); i++) {
-            Student student = (Student) myLinkedList1.get(i);
+            Student student =  myLinkedList1.get(i);
             System.out.println(student.getName());
         }
         myLinkedList1.clear();
+        System.out.println(myLinkedList.getFirst().getName());
+
 
     }
 }
