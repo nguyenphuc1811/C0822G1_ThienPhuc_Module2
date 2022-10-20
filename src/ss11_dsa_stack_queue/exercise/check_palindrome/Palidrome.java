@@ -10,17 +10,16 @@ public class Palidrome {
         Stack<String> stack = new Stack<>();
         Queue<String> queue = new LinkedList<>();
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập 1 chuỗi để kiểm tra đó có phải là palidrome k");
         String string = scanner.nextLine();
         boolean check = true;
-        String[] arr = string.split(" ");
+        String[] arr = string.split("");
         for (int i = 0; i < arr.length; i++) {
             stack.push(arr[i]);
-        }
-        for (int i = 0; i < arr.length; i++) {
             queue.offer(arr[i]);
         }
-        while (stack.isEmpty()) {
-            if (stack.pop().equals(queue.poll())) {
+        while (!stack.isEmpty()) {
+            if (!stack.pop().equals(queue.poll())) {
                 check = false;
                 break;
             }
